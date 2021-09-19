@@ -95,11 +95,11 @@ void loop() {
       if(note_active==false){                     // if a note isn't active and we're triggered, then start one!
         decay = false;
         if(invert_mode == false){                 // if the envelope is not inverted
-          envelope = 0;                          // envelope starts at zero
+          //envelope = 0;                          // envelope starts at zero
           drive=4096;                             // and drives toward full value
         }
         else{                                     // else, if envelope is inverted, drive toward zero
-          envelope = 4096;                      // envelope starts at max
+          //envelope = 4096;                      // envelope starts at max
           drive=0;                                // and drives toward zero value
         }                        
         alpha=alpha1;                             // set 'time constant' alpha1 for attack phase (set by the potentiometer position)

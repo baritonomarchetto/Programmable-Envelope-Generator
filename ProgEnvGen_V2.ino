@@ -100,11 +100,11 @@ void loop() {
       if(note_active==false){                     // if a note isn't active and we're triggered, then start one!
         decay = false;
         if(invert_mode == 0){                     // if the envelope is not inverted
-          envelope = 0;                           // envelope starts at zero
+          //envelope = 0;                           // envelope starts at zero
           drive = 4096;                           // and drives toward full value
         }
         else{                                     // else, if envelope is inverted, drive toward zero
-          envelope = 4096;                        // envelope starts at max
+          //envelope = 4096;                        // envelope starts at max
           drive = 0;                              // and drives toward zero value
         }
         alpha = alpha1;                           // set 'time constant' alpha1 for attack phase (set by the potentiometer position)
@@ -178,6 +178,7 @@ switch (scan){
   CV3 = analogRead(3);                    // get the release pole location (potentially closer to 1.0)
   alpha3 = 0.99999*cos((1023-CV3)/795);
   alpha3 = sqrt(alpha3);
+  alpha3 = sqrt(alpha3);                  //YES: twice sqrt
   break;  
   case 4:                                 // read the loop mode input
   loop_mode = !digitalRead(loopPin);
